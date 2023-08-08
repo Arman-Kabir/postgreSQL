@@ -9,7 +9,6 @@ CREATE TABLE
         -- UNIQUE(username,email)
         age int DEFAULT 18
     )
-    
 insert into users
 values (1, 'abc', 'abc@gmail.com');
 
@@ -40,6 +39,32 @@ VALUES (1, 'arman1', 'arman@gmail.com'), (
         'arman2',
         'arman2@gmail.com'
     );
+
+-- ## ALter TABLE
+
+ALTER table users
+add
+    column password Varchar(255) DEFAULT 'admin123' not null;
+
+ALTER table users drop column age;
+
+ALTER table users add column demo int;
+
+ALTER table users ALTER COLUMN demo type text;
+ALTER table users ALTER COLUMN demo set DEFAULT 'bangladesh';
+ALTER table users ALTER COLUMN demo drop DEFAULT;
+
+INSERT into users values (4,'arman4','arman4@ph.com');
+
+--rename a COLUMN
+ALTER TABLE users
+RENAME column demo to country;
+
+ALTER TABLE users alter COLUMN country set not null;
+ALTER TABLE users alter COLUMN country drop not null;
+
+ALTER TABLE users
+ADD CONSTRAINT unique_email UNIQUE(email);
 
 --Delete all rows in a table without deleting the table
 
