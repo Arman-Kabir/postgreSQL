@@ -43,4 +43,11 @@ VALUES (
     );
 
 --Update database table row
+
 UPDATE courses
+SET
+    course_name = 'PG',
+    description = NULL
+where course_id = 1;
+
+DELETE FROM courses where course_id <6;
